@@ -1,0 +1,23 @@
+# YOLOv8 segmentation
+ultralytics==8.0.171
+
+# OpenCV for image processing
+opencv-python==4.8.1.78
+opencv-python-headless==4.8.1.78
+
+# PyTorch CPU-only
+torch==2.2.0+cpu
+torchvision==0.17.1+cpu
+torchaudio==2.2.0+cpu
+-f https://download.pytorch.org/whl/torch_stable.html
+
+# Array operations
+numpy==1.26.0
+
+# Optional for dataset handling and progress bar
+pandas==2.1.1
+tqdm==4.66.1
+requests==2.32.0
+
+# Optional for visualization
+matplotlib==3.8.1
