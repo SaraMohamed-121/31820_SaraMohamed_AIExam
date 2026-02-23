@@ -6,7 +6,7 @@ The goal of this project is to build a regression pipeline that predicts the **m
 
 ---
 
-## 🗂 Dataset
+## Dataset
 
 **California Housing Prices** – Kaggle
 [Link to dataset](https://www.kaggle.com/datasets/camnugent/california-housing-prices)
@@ -81,4 +81,5 @@ regression_task/
    ```
 
 6. Trained models are saved in `outputs/` for future use.
+
 
