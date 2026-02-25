@@ -1,77 +1,69 @@
-# Flower Classification
+# **Flower Classification **
 
-## Overview
+## **Task Description**
 
-This project implements a **multi-class image classification system** for flower species recognition using **Transfer Learning with ResNet50**.
+This project implements a **deep learning image classification pipeline** to classify flower images into their correct species. The model uses **ResNet50 pretrained on ImageNet** and fine-tunes the final fully connected layers for multi-class classification.
 
-The model is trained on a public Kaggle dataset and optimized to achieve high accuracy while maintaining efficient training performance.
+## **Dataset**
+- [Oxford 102 Flowers Dataset](https://www.kaggle.com/datasets/nunenuh/pytorch-challange-flower-dataset)
+- Folder structure:
+    train/ | valid/ | test/
 
----
-
-## Key Features
-
-* Transfer Learning using pretrained **ResNet50**
-* Data Augmentation pipeline (rotation, flip, color jitter, random crop)
-* Train / Validation / Test split (70/15/15)
-* Optimized training with Adam + Learning Rate Scheduler
-* Evaluation using:
-
-## Project Structure
+## **Project Structure**
 
 ```
 flower_classification/
-├── train.py
-├── evaluate.py
-├── predict.py
+├── train.py                     # Training script with augmentation and accuracy/loss plots
+├── evaluate.py                  # Evaluation script with classification report and confusion matrix
+├── predict.py                   # Single image inference with sample predictions
 ├── data/
-│   ├── dataset/
-│   │   ├── train/
-│   │   ├── valid/
-│   │   └── test/
-│   └── cat_to_name.json
+│   └── dataset/                 # Dataset folder
+│       ├── train/
+│       ├── valid/
+│       └── test/
 ├── models/
-│   └── best_model.pth
+│   └── best_model.pth           # Saved best model weights
 ├── outputs/
-│   ├── training_curves.png
-│   ├── confusion_matrix.png
-│   └── sample_predictions.png
-├── requirements.txt
-└── README.md
+│   ├── training_curves.png      # Training & validation loss
+│   ├── training_accuracy.png    # Training & validation accuracy
+│   ├── confusion_matrix.png     # Confusion matrix
+│   └── sample_predictions.png   # 5 sample predictions with confidence
+├── cat_to_name.json             # Class index to name mapping
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-## Performance
+## **How to Run**
 
-* Achieved high validation accuracy
-* Target: 85%+ test accuracy (depending on dataset used)
+1. Install dependencies from `requirements.txt`:
 
----
-
-## How to Run
-
-### Install dependencies
-
-```
+```bash
 pip install -r requirements.txt
 ```
 
-### Train model
+2. Train the model:
 
-```
+```bash
 python train.py
 ```
 
-### Evaluate model
+3. Evaluate the model:
 
-```
+```bash
 python evaluate.py
 ```
 
-### Predict single image
+4. Predict a single image:
 
-```
-python predict.py --image path_to_image.jpg
+```bash
+python predict.py
 ```
 
+5. All outputs (plots, confusion matrix, sample predictions) will be saved in the `outputs/` folder.
+
+## **Environment**
+- Tested on Google Colab with GPU (Tesla T4)
+- Compatible with CPU, but training will be slower
 
